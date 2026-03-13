@@ -84,7 +84,7 @@ mvnw spring-boot:run
 3. The backend server will start at
 
 ```
-http://localhost:8080
+http://localhost:9090
 ```
 
 ---
