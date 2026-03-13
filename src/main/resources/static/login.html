@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Expense Tracker</title>
+<link rel="stylesheet" href="style.css?v=6">
+<script src="auth.js?v=3" defer></script>
+</head>
+<body class="auth-body">
+<div class="auth-layout">
+    <div class="auth-left">
+        <h1>Expense Tracker</h1>
+        <p>Track spending, manage monthly income, and visualize your progress in one place.</p>
+    </div>
+
+    <div class="auth-card">
+        <h2>Welcome Back</h2>
+        <p class="auth-subtitle">Login to continue</p>
+
+        <form id="loginForm">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" required placeholder="you@example.com">
+
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" required placeholder="Enter password">
+
+            <button type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <p class="auth-switch">New here? <a href="signup.html">Create an account</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Add Expense</title>
+
+<link rel="stylesheet" href="style.css?v=6">
+<script src="auth.js?v=3" defer></script>
+<script src="script.js?v=7" defer></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2 class="logo">Expense</h2>
+
+        <ul class="menu">
+
+            <li onclick="goToDashboard()">Dashboard</li>
+            <li class="active" onclick="goToAddExpense()">Add Expense</li>
+            <li onclick="goToAnalytics()">Analytics</li>
+            <li onclick="goToViewExpenses()">View Expenses</li>
+
+        </ul>
+
+        <button class="logout" onclick="doLogout()">Logout</button>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="header">
+
+            <h1>Add Expense</h1>
+
+            <div class="profile">
+                <span id="profileName">User</span>
+            </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <h2>Add New Expense</h2>
+
+            <form id="expenseForm">
+
+                <label for="title">Expense Title</label>
+                <input type="text" id="title" placeholder="Expense title">
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <label for="amount">Amount</label>
+
+                        <div class="amount-box">
+                            <span>&#8377;</span>
+                            <input type="number" id="amount" min="1" step="0.01" required>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col">
+
+                        <label for="category">Category</label>
+
+                        <select id="category" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option>Food</option>
+                            <option>Travel</option>
+                            <option>Bills</option>
+                            <option>Shopping</option>
+                            <option>Health</option>
+                            <option>Education</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col">
+
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+
+                    </div>
+
+                    <div class="col">
+
+                        <label for="note">Note</label>
+                        <textarea id="note" placeholder="Optional"></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <label for="description">Description</label>
+                <textarea id="description" placeholder="Optional details"></textarea>
+
+                <button type="submit" class="add-btn">Add Expense</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Finance Tracker Dashboard</title>
+
+<link rel="stylesheet" href="style.css?v=6">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="auth.js?v=3" defer></script>
+<script src="script.js?v=7" defer></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2 class="logo">Expense</h2>
+
+        <ul class="menu">
+
+            <li class="active" onclick="goToDashboard()">Dashboard</li>
+
+            <li onclick="goToAddExpense()">Add Expense</li>
+
+            <li onclick="goToAnalytics()">Analytics</li>
+
+            <li onclick="goToViewExpenses()">View Expenses</li>
+
+        </ul>
+
+        <button class="logout" onclick="doLogout()">Logout</button>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <!-- Header -->
+        <div class="header">
+
+            <h1>Finance Tracker</h1>
+
+            <div class="profile">
+                <span id="profileName">User</span>
+                
+            </div>
+
+        </div>
+
+
+        <!-- Cards -->
+        <div class="cards">
+
+            <div class="card balance">
+                <h3>Total Balance</h3>
+                <p id="balance">Loading...</p>
+            </div>
+
+            <div class="card income income-card">
+                <h3>Total Income</h3>
+                <p id="income">Loading...</p>
+                <button type="button" class="income-add-btn" onclick="toggleIncomePopup(event)">+</button>
+                <div id="incomePopup" class="income-popup" hidden>
+                    <h4>Add Monthly Income</h4>
+                    <form id="incomeForm">
+                        <label for="incomeAmount">Amount</label>
+                        <input id="incomeAmount" type="number" min="1" step="0.01" required>
+
+                        <label for="incomeMonth">Month</label>
+                        <input id="incomeMonth" type="month" required>
+
+                        <div class="modal-actions">
+                            <button type="button" class="modal-btn cancel" onclick="closeIncomePopup()">Cancel</button>
+                            <button type="submit" class="modal-btn save">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card expense">
+                <h3>Total Expense</h3>
+                <p id="expense">Loading...</p>
+            </div>
+
+            <div class="card transaction">
+                <h3>Total Transactions</h3>
+                <p id="transactions">Loading...</p>
+            </div>
+
+        </div>
+
+        <div class="budget-strip">
+            <div class="budget-card">
+                <h3>Monthly Budget Planner</h3>
+                <div class="budget-actions">
+                    <input id="monthlyBudgetInput" type="number" min="1" step="0.01" placeholder="Set monthly budget">
+                    <button id="saveBudgetBtn" type="button" class="search-btn">Save Budget</button>
+                </div>
+                <p id="budgetStatus" class="budget-status no-budget">Set your monthly budget to track spending.</p>
+                <p id="overspendAlert" class="overspend-alert" hidden></p>
+            </div>
+        </div>
+
+
+        <!-- Charts -->
+        <div class="charts">
+
+            <div class="chart-box">
+                <h3>Income vs Expenses</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h3>Expense Breakdown</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <!-- Table -->
+        <div class="table-section">
+
+            <h3>Recent Expenses</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="expenseTable">
+                    <tr>
+                        <td colspan="5">Loading expenses...</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

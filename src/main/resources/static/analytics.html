@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Analytics</title>
+
+<link rel="stylesheet" href="style.css?v=6">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="auth.js?v=3" defer></script>
+<script src="script.js?v=7" defer></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2 class="logo">Expense Tracker</h2>
+
+<ul class="menu">
+
+<li onclick="goToDashboard()">Dashboard</li>
+
+<li onclick="goToAddExpense()">Add Expense</li>
+
+<li onclick="goToViewExpenses()">View Expenses</li>
+
+<li class="active">Analytics</li>
+
+</ul>
+
+<button class="logout" onclick="doLogout()">Logout</button>
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="header">
+
+<h1>Analytics</h1>
+
+<div class="profile">
+
+<span id="profileName">User</span>
+<img src="https://i.pravatar.cc/40">
+
+</div>
+
+</div>
+
+
+<!-- ANALYTICS CARDS -->
+
+<div class="analytics-grid">
+
+<div class="chart-box">
+
+<h3>Monthly Income vs Expense</h3>
+
+<canvas id="lineChart"></canvas>
+
+</div>
+
+
+<div class="chart-box">
+
+<h3>Expense Breakdown</h3>
+
+<canvas id="pieChart"></canvas>
+
+</div>
+
+</div>
+
+
+<!-- CATEGORY SUMMARY -->
+
+<div class="table-section">
+
+<h3>Spending By Category</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Category</th>
+<th>Total Spent</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Food</td>
+<td>₹2400</td>
+</tr>
+
+<tr>
+<td>Travel</td>
+<td>₹1650</td>
+</tr>
+
+<tr>
+<td>Bills</td>
+<td>₹1200</td>
+</tr>
+
+<tr>
+<td>Shopping</td>
+<td>₹1350</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

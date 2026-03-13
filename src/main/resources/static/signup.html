@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Expense Tracker</title>
+<link rel="stylesheet" href="style.css?v=6">
+<script src="auth.js?v=3" defer></script>
+</head>
+<body class="auth-body">
+<div class="auth-layout">
+    <div class="auth-left">
+        <h1>Expense Tracker</h1>
+        <p>Create your account and start managing your money smarter.</p>
+    </div>
+
+    <div class="auth-card">
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Start in under a minute</p>
+
+        <form id="signupForm">
+            <label for="signupName">Full Name</label>
+            <input id="signupName" type="text" required placeholder="Your name">
+
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" required placeholder="you@example.com">
+
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" type="password" minlength="6" required placeholder="Minimum 6 characters">
+
+            <button type="submit" class="auth-btn">Create Account</button>
+        </form>
+
+        <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</div>
+</body>
+</html>
